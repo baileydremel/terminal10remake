@@ -188,7 +188,15 @@ function changeTxt(){
 
     //This checks to see if something is waiting for user input, in which it will run the command that is waiting for user input
     if(isAwaitingUserInput){
-      checkCommand(awaitingCommand);
+
+      //This is just a check to see if the user want's to quit the awaiting command
+      let checkQuit = textInput.toUpperCase();
+      console.log(checkQuit);
+      if(checkQuit == 'QUIT'){
+        QUITCOMMAND();
+      }else{
+        checkCommand(awaitingCommand);
+      }
     }else{
       textInput = textInput.toUpperCase();
       checkCommand(textInput);
@@ -258,7 +266,11 @@ function checkCommand(txt) {
     }
     //If there is not command found, we let the user know
     if(!isValidCommand){
-      textToChange = 'No command was found, please try again';
+      if(txt == 'QUIT'){
+        textToChange = 'Currently not awaiting an input from user.'
+      }else{
+        textToChange = 'No command was found, please try again';
+      }
     }
   }
   
@@ -348,7 +360,7 @@ function USER(){
     textToChange = 'Hello, ' + username;
     isAwaitingUserInput = false;
   }else{
-    textToChange = 'Please enter a username';
+    textToChange = 'Please enter a username.<br>Note: Type QUIT if you do not wish to set username';
     awaitingCommand = 'USER';
     isAwaitingUserInput = true;
   }
@@ -398,7 +410,7 @@ function FONTSIZE(){
   //This will run when the command is initally called, prompting the user for input.
   //This also sets the waiting command so the user doesn't have to enter it again.
   }else{
-    textToChange = 'Please enter font size between 8px and 124px you wish to change the text to. Please note decimals will round to the nearest whole number';
+    textToChange = 'Please enter font size between 8px and 124px you wish to change the text to. Please note decimals will round to the nearest whole number.<br>Note: Type QUIT if you wish to not set the font size.';
     awaitingCommand = 'FONTSIZE';
     isAwaitingUserInput = true;
   }
@@ -419,4 +431,11 @@ function COMMANDS(){
 function RESET(){
   textContent.style.fontSize = '24px';
   textToChange = 'Font size has been reset to 24px';
+}
+
+
+//If a user doesn't want to complete a function that is awaiting a command, they can type in quit and it will quit the awaiting command
+function QUITCOMMAND(){
+  isAwaitingUserInput = false;
+  textToChange = 'Quitting command...';
 }
