@@ -91,7 +91,7 @@ function draw(){
     }
 
     textContent.innerHTML = '';
-    textToChange = `Welcome to Terminal 10, a interactive typeface sampler!
+    textToChange = `Welcome to the Terminal 10 interactive typeface sampler!
     Please enter a command to continue or type in HELP for instructions.`;
     isNewText = true;
     hasIntroPlayed = true;
