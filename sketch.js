@@ -258,7 +258,7 @@ function checkCommand(txt) {
     }
     //If there is not command found, we let the user know
     if(!isValidCommand){
-      textToChange = 'No command found, please try again';
+      textToChange = 'No command was found, please try again';
     }
   }
   
@@ -323,9 +323,9 @@ function isOverflow(x){
 function HELP(){
   textToChange = `Terminal 10 is an interactive typeface sampler meant to mimic entering terminal inputs.
   Select the text input field below to enter any text. If you wish to enter a command, simply type it in or select it from the COMMANDS dropdown.
-  If a command is valid, the text will update accordingly.
-  If a command does not exist, please check spelling and try again.
-  If nothing was entered into the input, an error will occur.`
+  If a command is valid, the text will be printed accordingly.
+  If a command does not exist, please check the spelling and try again.
+  If nothing was entered into the input field below, an error will occur.`
   if(!isMobile){
     textToChange = textToChange + '<br>Pressing the up or down arrows will cycle through previous text inputs.';
   }
