@@ -104,6 +104,12 @@ a:hover{
 .headerItem{
   padding:5px;
   max-height:30px;
+  transition: rotate 0.5s ease-in-out;
+}
+
+.headerItem:hover{
+  cursor: pointer;
+  rotate: 60deg;
 }
 
 .mainContent{
