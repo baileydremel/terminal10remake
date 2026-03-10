@@ -2,6 +2,8 @@
 
 A complete redo and overhaul of an old university project called **Terminal-10** ([Click here to view the old project](https://github.com/baileyldremel/typefacesampler))
 
+([Click here to explore the new Terminal-10, which is still a work in progress](https://baileydremel.github.io/terminal10remake/))
+
 ## Why remake the project?
 
 One of the key problems with the old project was that it was not optimised *in any way* for mobile. It was listening to key inputs and had no way for mobile users to type commands as there wasn't a place to type anything into. Basically, it could only be used with a physical keyboard.
